@@ -3,7 +3,7 @@ const User = require("../model/user");
 
 router.post("/add", async (req, res) => {
   try {
-    const user = await new User(req.body);
+    const user = await new User(req.body); //await User.create(req.body)
     await user.save();
     return res.json(user);
   } catch (error) {
